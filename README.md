@@ -1,1 +1,1 @@
-# digital-contents-ecommerce
+# Digital Contents E-commerce Site with Django
