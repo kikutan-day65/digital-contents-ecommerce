@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-def user_profile(request):
-    return render(request, 'users/user-profile.html')
+def index(request):
+    return render(request, 'users/index.html')
