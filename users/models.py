@@ -12,3 +12,7 @@ class Profile(models.Model):
     zip = models.IntegerField(null=True, blank=True)
     phone = models.IntegerField(null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return self.user
+    
