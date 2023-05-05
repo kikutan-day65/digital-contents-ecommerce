@@ -34,12 +34,12 @@
             <figure class="effect-ming tm-video-item">
                 <img src="../../../static/images/img-test.jpg" alt="Image" class="img-fluid">
                 <figcaption class="d-flex align-items-center justify-content-center">
-                    <h2><a href="photo-detail.html">View more</a></h2>
+                    <h2><a href="photo-detail.html">{{ product.product_format }}</a></h2>
                 </figcaption>
             </figure>
             <div class="d-flex justify-content-between tm-text-gray">
-                <span>{{ product.owner }}</span>
-                <span class="tm-text-gray-light">{{ product.product_format }}</span>
+                <span>By {{ product.owner }}</span>
+                <span class="tm-text-gray-light">Price: $1000</span>
             </div>
         </div>
         {% endfor %}
