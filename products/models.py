@@ -7,6 +7,13 @@ class Product(models.Model):
     product_name = models.CharField(max_length=50, null=False, blank=False)
     product_format = models.CharField(max_length=50, null=False, blank=False)
     product_description = models.TextField(max_length=1000, null=True, blank=True)
+    tags = models.ManyToManyField('Tag', blank=True)
 
     def __str__(self):
         return str(self.product_name)
+    
+class Tag(models.Model):
+    tag_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return str(self.tag_name)
