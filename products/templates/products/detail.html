@@ -40,6 +40,9 @@
                     </div>
                 </div>
                 <div>
+                    <h3 class="tm-text-gray-dark mb-3">Description</h3>
+                    {{ product.product_description }}
+
                     <h3 class="tm-text-gray-dark mb-3">Tags</h3>
                     
                     {% for tag in product.tags.all %}
