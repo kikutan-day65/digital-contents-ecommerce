@@ -31,12 +31,14 @@
             <div class="d-flex justify-content-between tm-text-gray">
                 <span>{{ product.product_name }}</span>
             </div>
-            <figure class="effect-ming tm-video-item">
-                <img src="../../../static/images/img-test.jpg" alt="Image" class="img-fluid">
-                <figcaption class="d-flex align-items-center justify-content-center">
-                    <h2><a href="photo-detail.html">{{ product.product_format }}</a></h2>
-                </figcaption>
-            </figure>
+            <a href="{% url 'detail' product.id %}">
+                <figure class="effect-ming tm-video-item">
+                    <img src="../../../static/images/img-test.jpg" alt="Image" class="img-fluid">
+                    <figcaption class="d-flex align-items-center justify-content-center">
+                        <h2>{{ product.format }}</h2>
+                    </figcaption>
+                </figure>
+            </a> 
             <div class="d-flex justify-content-between tm-text-gray">
                 <span>By {{ product.owner }}</span>
                 <span class="tm-text-gray-light">Price: $1000</span>
