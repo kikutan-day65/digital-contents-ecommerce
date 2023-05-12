@@ -12,3 +12,7 @@ def detail(request, pk):
     product = Product.objects.get(id=pk)
     context = {'product': product}
     return render(request, 'products/detail.html', context)
+
+def add_product(request):
+    context = {}
+    return render(request, 'products/product_form.html', context)
