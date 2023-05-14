@@ -38,3 +38,13 @@ def update_product(request, pk):
 
     context = {'form': form}
     return render(request, 'products/product_form.html', context)
+
+def delete_product(request, pk):
+    product = Product.objects.get(id=pk)
+
+    if request.method == 'POST':
+        product.delete()
+        return redirect('profile')
+
+    context = {'object': product}
+    return render(request, 'products/delete_product.html', context)
