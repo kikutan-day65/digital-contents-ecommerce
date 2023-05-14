@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Product
 from .forms import ProductForm
@@ -16,5 +16,12 @@ def detail(request, pk):
 
 def add_product(request):
     form = ProductForm()
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('profile')
+
     context = {'form': form}
     return render(request, 'products/product_form.html', context)
