@@ -25,3 +25,16 @@ def add_product(request):
 
     context = {'form': form}
     return render(request, 'products/product_form.html', context)
+
+def update_product(request, pk):
+    product = Product.objects.get(id=pk)
+    form = ProductForm(instance=product)
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid:
+            form.save()
+            return redirect('profile')
+
+    context = {'form': form}
+    return render(request, 'products/product_form.html', context)
