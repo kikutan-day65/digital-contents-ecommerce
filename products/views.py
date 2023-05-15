@@ -3,17 +3,19 @@ from django.shortcuts import render, redirect
 from .models import Product
 from .forms import ProductForm
 
-# Create your views here.
+# top page
 def products(request):
     products = Product.objects.all() 
     context = {'products': products}
     return render(request, 'products/products.html', context)
 
+# product detail
 def detail(request, pk):
     product = Product.objects.get(id=pk)
     context = {'product': product}
     return render(request, 'products/detail.html', context)
 
+# add new product
 def add_product(request):
     form = ProductForm()
 
@@ -26,6 +28,7 @@ def add_product(request):
     context = {'form': form}
     return render(request, 'products/product_form.html', context)
 
+# update product
 def update_product(request, pk):
     product = Product.objects.get(id=pk)
     form = ProductForm(instance=product)
@@ -39,6 +42,7 @@ def update_product(request, pk):
     context = {'form': form}
     return render(request, 'products/product_form.html', context)
 
+# delete product
 def delete_product(request, pk):
     product = Product.objects.get(id=pk)
 
