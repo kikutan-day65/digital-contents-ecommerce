@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<form action="{% url 'login' %}" method="POST">
+<form action="{% url 'user-login' %}" method="POST">
     {% csrf_token %}
    <input type="text" name="username" placeholder="Username"> 
    <input type="text" name="pasword" placeholder="Enter password"> 
