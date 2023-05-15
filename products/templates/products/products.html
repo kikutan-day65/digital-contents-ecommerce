@@ -29,7 +29,7 @@
         {% for product in products %}
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mb-5">
             <div class="d-flex justify-content-between tm-text-gray">
-                <span>{{ product.name }}</span>
+                <h2>{{ product.name }}</h2>
             </div>
             <a href="{% url 'detail' product.id %}">
                 <figure class="effect-ming tm-video-item">
